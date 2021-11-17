@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@sveltejs/adapter-vercel': ^1.0.0-next.31
   '@sveltejs/kit': next
   autoprefixer: ^10.3.7
   cssnano: ^5.0.8
@@ -12,6 +13,7 @@ specifiers:
   tailwindcss: ^2.2.16
 
 devDependencies:
+  '@sveltejs/adapter-vercel': 1.0.0-next.31
   '@sveltejs/kit': 1.0.0-next.196_svelte@3.44.1
   autoprefixer: 10.4.0_postcss@8.3.11
   cssnano: 5.0.11_postcss@8.3.11
@@ -573,6 +575,12 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.0
+    dev: true
+
+  /@sveltejs/adapter-vercel/1.0.0-next.31:
+    resolution: {integrity: sha512-W8p/U00B6ihVrDpwMkgEexfVUzaLmn4MRtXj//Gw4NDFfsrZR4P5wBidrOAIkCYBMvqCOHD+vbAvIiAMOaN23g==}
+    dependencies:
+      esbuild: 0.13.14
     dev: true
 
   /@sveltejs/kit/1.0.0-next.196_svelte@3.44.1:
