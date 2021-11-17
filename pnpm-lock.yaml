@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@sveltejs/adapter-vercel': ^1.0.0-next.31
   '@sveltejs/kit': next
+  '@tailwindcss/line-clamp': ^0.2.2
   autoprefixer: ^10.3.7
   cssnano: ^5.0.8
   firebase: ^9.4.1
@@ -15,6 +16,7 @@ specifiers:
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.31
   '@sveltejs/kit': 1.0.0-next.196_svelte@3.44.1
+  '@tailwindcss/line-clamp': 0.2.2_tailwindcss@2.2.19
   autoprefixer: 10.4.0_postcss@8.3.11
   cssnano: 5.0.11_postcss@8.3.11
   firebase: 9.4.1
@@ -624,6 +626,14 @@ packages:
       vite: 2.6.14
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@tailwindcss/line-clamp/0.2.2_tailwindcss@2.2.19:
+    resolution: {integrity: sha512-NgA4Ds+/eCiO+6O3SooRsfJ8m7M2+QvNvHwOjBQq7FIYoWwAV4I4Wu4fjHeuO9Yi6p47ceHUKEGGEBh0ozQodg==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 2.2.19_0c54bdadaf9d9c9c6c134cb2c6c061a3
     dev: true
 
   /@trysound/sax/0.2.0:
