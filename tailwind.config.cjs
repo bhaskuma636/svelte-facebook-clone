@@ -4,9 +4,14 @@ const config = {
 
   theme: {
     extend: {},
+    fontFamily : {
+    	'sans': ['Roboto', 'Arial', 'sans-serif'],
+    }
   },
 
-  plugins: [],
+  plugins: [
+  	require('@tailwindcss/line-clamp'),
+  ],
 };
 
 module.exports = config;
