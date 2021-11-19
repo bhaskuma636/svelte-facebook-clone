@@ -1,9 +1,11 @@
 <ul class="mt-5 flex flex-col space-y-2 w-[87%] hidden lg:flex">
-	<li class="cursor-pointer flex items-center justify-start space-x-2 bg-[#242526] rounded-lg py-1.5">
-		<div class="w-8 h-8 rounded-full ml-1">
-			<img class="w-full h-full block object-cover rounded-full shadow" src="https://scontent-maa2-1.xx.fbcdn.net/v/t1.6435-1/p160x160/140410108_522430372055176_3800608230781856331_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=7206a8&_nc_ohc=XyFyPKOtp5AAX9GSm3b&_nc_ht=scontent-maa2-1.xx&oh=be3c3cac0f69dbb82b730a1c0bb03396&oe=61BB6A90" alt="pic">
-		</div>
-		<p class="font-medium text-[0.96rem]">Manohar Maharshi</p>
+	<li class="cursor-pointer">
+		<a sveltekit:prefetch href="/profile" class="cursor-pointer flex items-center justify-start space-x-2 bg-[#242526] rounded-lg py-1.5">		
+			<div class="w-8 h-8 rounded-full ml-1">
+				<img class="w-full h-full block object-cover rounded-full shadow" src="https://scontent-maa2-1.xx.fbcdn.net/v/t1.6435-1/p160x160/140410108_522430372055176_3800608230781856331_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=7206a8&_nc_ohc=XyFyPKOtp5AAX9GSm3b&_nc_ht=scontent-maa2-1.xx&oh=be3c3cac0f69dbb82b730a1c0bb03396&oe=61BB6A90" alt="pic">
+			</div>
+			<p class="font-medium text-[0.96rem]">Manohar Maharshi</p>
+		</a>
 	</li>
 	<li class="cursor-pointer flex items-center justify-start space-x-2 hover:bg-[#3a3b3c] rounded-lg py-1.5">
 		<div class="w-7 h-7 rounded-full ml-1">
