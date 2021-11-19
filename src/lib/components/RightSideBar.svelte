@@ -15,6 +15,6 @@
 		</li>
 	{/each}
 	<div class="flex items-center justify-center">
-		<a class="text-xs text-blue-500" href="/">Show More</a>
+		<a class="text-xs text-blue-500" sveltekit:prefetch href="/profile">Show More</a>
 	</div>
 </ul>
