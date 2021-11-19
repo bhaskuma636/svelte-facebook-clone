@@ -5,4 +5,19 @@
 
 Live : https://svelte-facebook-clone.vercel.app
 
-Project Description/to-do : https://manohar-maharshi.notion.site/4545ae10a20e430ab3df5b548b150c2b?v=170f065f559948078d2ede331e83477f
+# To-do
+- [ ]  Auth functionality
+    - [ ]  Log In
+    - [ ]  Sign Up
+    - [ ]  Log Out
+- [ ]  Create Post
+- [ ]  Delete Post
+- [ ]  Show Posts of User & Other Users
+- [ ]  Post Interactions
+    - [ ]  Like/Dislike Post
+    - [ ]  Comment on Post
+    - [ ]  Share Post
+- [ ]  Profile Actions
+    - [ ]  Update Changed Display Name, Profile Pic
+- [ ]  Add Friends
+- [ ]  Remove Friends
