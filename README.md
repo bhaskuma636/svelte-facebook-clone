@@ -5,6 +5,8 @@
 
 Live : https://svelte-facebook-clone.vercel.app
 
+Docs : https://manohar-maharshi.notion.site/Svelte-kit-Facebook-Clone-6030d9f3e3cf40fda254f576b3a80ecb
+
 # To-do
 - [ ]  Auth functionality
     - [ ]  Log In
