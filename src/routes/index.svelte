@@ -7,7 +7,7 @@
 	import PostContainer from '$lib/components/PostContainer.svelte'
 
 </script>
-<main class="mx-auto lg:px-4 mt-[57px]">
+<main class="mx-auto lg:px-4 pt-[57px]">
 	<div class="flex items-start space-x-2 justify-between">
 		<div class="w-1/3 sticky top-[57px] -z-1">
 			<LeftSideBar />
