@@ -17,8 +17,8 @@
 			</div>
 		</div>
 		<div>
-			<p class="px-4  line-clamp-5 mb-2">Trailer ke ila aithe repu theatre lo emavtundo😂, Jai balayya ❤️</p>
-			<img src="https://scontent.fhyd9-1.fna.fbcdn.net/v/t39.30808-6/p526x296/241351919_4465524170190502_833195494327524980_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=RSp833iNucQAX9HY6Pt&_nc_ht=scontent.fhyd9-1.fna&oh=ddcd898a0de653feb816958f65cbc50d&oe=619B11ED" alt="imf">
+			<p class="px-4  line-clamp-5 mb-2">Sveltefied ❤</p>
+			<img src="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg" alt="imf">
 		</div>
 		<div class="px-3 py-1">
 			<div class="flex items-center justify-between text-[#b0b3b8] text-sm mb-2">
