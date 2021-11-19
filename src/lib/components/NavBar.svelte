@@ -2,17 +2,19 @@
 	<nav class="w-full max-h-[56px] py-2 flex items-center justify-between space-x-2">
 		<ul class="w-auto flex items-center space-x-2 lg:space-x-3">
 			<li class="w-auto">
-				<a href="/">
+				<a sveltekit:prefetch href="/">
 					<img class="w-12 lg:w-10 h-full object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png" alt="logo">
 				</a>
 			</li>
 			<li class="w-full">
-				<input class="md:w-[15rem] w-full rounded-full px-4 py-2 bg-[#3a3b3c] placeholder:text-gray-900" type="search" placeholder="Search Facebook">
+				<input class="focus:outline-none md:w-[15rem] w-full rounded-full px-4 py-2 bg-[#3a3b3c] placeholder:text-gray-900" type="search" placeholder="Search Facebook">
 			</li>
 		</ul>
 		<ul class="flex-1 h-full flex justify-start pl-14 items-center space-x-3 hidden lg:flex">
 			<li class="cursor-pointer border-b-[3px] border-[#1877F2] h-full py-4 pb-[0.6rem] flex items-center justify-center w-[7rem]">
-				<svg viewBox="0 0 28 28" class="fill-[#1877F2]" height="28" width="28"><path d="M25.825 12.29C25.824 12.289 25.823 12.288 25.821 12.286L15.027 2.937C14.752 2.675 14.392 2.527 13.989 2.521 13.608 2.527 13.248 2.675 13.001 2.912L2.175 12.29C1.756 12.658 1.629 13.245 1.868 13.759 2.079 14.215 2.567 14.479 3.069 14.479L5 14.479 5 23.729C5 24.695 5.784 25.479 6.75 25.479L11 25.479C11.552 25.479 12 25.031 12 24.479L12 18.309C12 18.126 12.148 17.979 12.33 17.979L15.67 17.979C15.852 17.979 16 18.126 16 18.309L16 24.479C16 25.031 16.448 25.479 17 25.479L21.25 25.479C22.217 25.479 23 24.695 23 23.729L23 14.479 24.931 14.479C25.433 14.479 25.921 14.215 26.132 13.759 26.371 13.245 26.244 12.658 25.825 12.29"></path></svg>
+				<a sveltekit:prefetch href="/">
+					<svg viewBox="0 0 28 28" class="fill-[#1877F2]" height="28" width="28"><path d="M25.825 12.29C25.824 12.289 25.823 12.288 25.821 12.286L15.027 2.937C14.752 2.675 14.392 2.527 13.989 2.521 13.608 2.527 13.248 2.675 13.001 2.912L2.175 12.29C1.756 12.658 1.629 13.245 1.868 13.759 2.079 14.215 2.567 14.479 3.069 14.479L5 14.479 5 23.729C5 24.695 5.784 25.479 6.75 25.479L11 25.479C11.552 25.479 12 25.031 12 24.479L12 18.309C12 18.126 12.148 17.979 12.33 17.979L15.67 17.979C15.852 17.979 16 18.126 16 18.309L16 24.479C16 25.031 16.448 25.479 17 25.479L21.25 25.479C22.217 25.479 23 24.695 23 23.729L23 14.479 24.931 14.479C25.433 14.479 25.921 14.215 26.132 13.759 26.371 13.245 26.244 12.658 25.825 12.29"></path></svg>
+				</a>
 			</li>	
 			<li class="cursor-pointer h-full py-4 pb-[0.6rem] flex items-center justify-center w-[7rem]">
 				<svg viewBox="0 0 28 28" class="fill-[#e4e6eb]" height="28" width="28"><path d="M8.75 25.25C8.336 25.25 8 24.914 8 24.5 8 24.086 8.336 23.75 8.75 23.75L19.25 23.75C19.664 23.75 20 24.086 20 24.5 20 24.914 19.664 25.25 19.25 25.25L8.75 25.25ZM17.163 12.846 12.055 15.923C11.591 16.202 11 15.869 11 15.327L11 9.172C11 8.631 11.591 8.297 12.055 8.576L17.163 11.654C17.612 11.924 17.612 12.575 17.163 12.846ZM21.75 20.25C22.992 20.25 24 19.242 24 18L24 6.5C24 5.258 22.992 4.25 21.75 4.25L6.25 4.25C5.008 4.25 4 5.258 4 6.5L4 18C4 19.242 5.008 20.25 6.25 20.25L21.75 20.25ZM21.75 21.75 6.25 21.75C4.179 21.75 2.5 20.071 2.5 18L2.5 6.5C2.5 4.429 4.179 2.75 6.25 2.75L21.75 2.75C23.821 2.75 25.5 4.429 25.5 6.5L25.5 18C25.5 20.071 23.821 21.75 21.75 21.75Z"></path></svg>
@@ -29,7 +31,7 @@
 		</ul>
 		<ul class="flex items-center space-x-1 lg:space-x-3">
 			<li class="bg-[#3a3b3c] rounded-full h-[2.5rem] w-[2.5rem] border border-gray-600">
-				<a href="/">
+				<a sveltekit:prefetch href="/profile">
 					<img class="w-full h-full object-cover" src="https://avatars.dicebear.com/api/adventurer/john.svg" alt="pic">
 				</a>
 			</li>
