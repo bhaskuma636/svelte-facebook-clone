@@ -1,9 +1,12 @@
+<script>
+	import { userProfileData } from '$lib/store/user'
+</script>
 <main class="fixed top-0 z-50 bg-[#1c1e21] w-full mx-auto px-4 border-b border-gray-800 shadow-lg">
 	<nav class="w-full max-h-[56px] py-2 flex items-center justify-between space-x-2">
 		<ul class="w-auto flex items-center space-x-2 lg:space-x-3">
-			<li class="w-auto">
-				<a sveltekit:prefetch href="/">
-					<img class="w-12 lg:w-10 h-full object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png" alt="logo">
+			<li class="w-auto rounded-full">
+				<a class="rounded-full" sveltekit:prefetch href="/">
+					<img class="w-12 lg:w-10 h-full object-cover rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png" alt="logo">
 				</a>
 			</li>
 			<li class="w-full">
@@ -30,9 +33,9 @@
 			</li>		
 		</ul>
 		<ul class="flex items-center space-x-1 lg:space-x-3">
-			<li class="bg-[#3a3b3c] rounded-full h-[2.5rem] w-[2.5rem] border border-gray-600">
+			<li title={$userProfileData?.name} class="bg-[#3a3b3c] rounded-full h-[2.5rem] w-[2.5rem] border border-gray-600">
 				<a sveltekit:prefetch href="/profile">
-					<img class="w-full h-full object-cover" src="https://avatars.dicebear.com/api/adventurer/john.svg" alt="pic">
+					<img class="w-full h-full object-cover rounded-full" src={ $userProfileData ? $userProfileData?.photo : "https://avatars.dicebear.com/api/adventurer/john.svg"} alt={$userProfileData?.name}>
 				</a>
 			</li>
 			<li class="hidden lg:grid cursor-pointer grid place-items-center text-white rounded-full h-[2.5rem] w-[2.5rem] bg-[#3a3b3c]">
