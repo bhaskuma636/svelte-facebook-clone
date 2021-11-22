@@ -1,18 +1,17 @@
 <script>
 	import { app } from '$lib/store/firebase'
-	import { user } from '$lib/store/user'
+	import { user,friendsArray } from '$lib/store/user'
 	import { doc, setDoc,deleteDoc  ,getFirestore,getDoc  } from "firebase/firestore";
 	import { collection,onSnapshot,serverTimestamp } from "firebase/firestore";
 
-	let friendsArray = [];
 	let isLoading = false;
 
 	$: if($user){
 		const db = getFirestore(app);
 		onSnapshot(collection(db, "users", $user?.uid,"friends"), (querySnapshot) => {
-			friendsArray = [];
+			$friendsArray = [];
 			querySnapshot.forEach(async(docOne) => {
-				friendsArray = [docOne.data(),...friendsArray]
+				$friendsArray = [docOne.data(),...$friendsArray]
 			});
 		});
 	}
@@ -41,7 +40,7 @@
 		</div>
 	{/if}
 	<ul class="flex flex-col space-y-2.5">
-		{#each friendsArray as item, index}
+		{#each $friendsArray as item, index}
 			<li class=" cursor-pointer flex items-center justify-start space-x-2.5 px-3 hover:bg-[#3a3b3c] rounded-lg py-1.5">
 				<div class="w-8 rounded-full">
 					<img class=" block rounded-full object-cover" src={item?.photo} alt="pic">

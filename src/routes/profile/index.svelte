@@ -46,8 +46,8 @@
 	</div>
 
 	{#if 1 === currentTab}
-		<div class="lg:-ml-10 px-3">
-  			<!-- <Post /> -->
+		<div class="lg:-ml-10 px-3 mb-10">
+  			<PostContainer />
 		</div>
 	{/if}
 
