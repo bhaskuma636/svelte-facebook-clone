@@ -1,7 +1,91 @@
 <script>
+	import { app } from '$lib/store/firebase'
+	import { user,userProfileData } from '$lib/store/user'
+	import { doc, setDoc } from "firebase/firestore"; 
+	import { getFirestore,serverTimestamp,collection, addDoc } from "firebase/firestore";
+
+
 	let openImageDialogBox = false;
-	let imageUrl = "";
+	let isLoading = false;
+	let postImage = "";
+	let postText = "";
+
+	 const handlePostUpload = async () => {
+	 	isLoading = true;
+	 	if($user){
+			const db = getFirestore(app);
+	 		if(postImage.trim() != "" && postText.trim() === ""){
+	 			try{
+					const docRef = await addDoc(collection(db, "users", $user?.uid, "posts"), {
+					  image: postImage,
+					  text: null,
+					  uploadTime: serverTimestamp(),
+					  $userProfileData
+					})
+					await setDoc(doc(db, "users", $user?.uid, "posts", docRef?.id), {
+					  image: postImage,
+					  text: null,
+					  postId: docRef?.id,
+					  uploadTime: serverTimestamp(),
+					},{ merge: true });
+	 			}catch(error){
+	 				isLoading = false;
+	 			}finally{
+	 				isLoading = false;
+	 				postImage = "";
+	 			}
+	 		}
+	 		if(postText.trim() != "" && postImage.trim() === ""){
+	 			try{
+					const docRef = await addDoc(collection(db, "users", $user?.uid, "posts"), {
+					  image: null,
+					  text: postText,
+					  uploadTime: serverTimestamp(),
+						$userProfileData
+					})
+					await setDoc(doc(db, "users", $user?.uid, "posts", docRef?.id), {
+					  image: null,
+					  text: postText,
+					  postId: docRef?.id,
+					  uploadTime: serverTimestamp(),
+					},{ merge: true });
+	 			}catch(error){
+	 				isLoading = false;
+	 			}finally{
+	 				isLoading = false;
+	 				postText = "";
+	 			}
+	 		}
+	 		if(postText.trim() != "" && postImage.trim() != ""){
+	 			console.log("both",postText,postImage)
+	 			try{
+					const docRef = await addDoc(collection(db, "users", $user?.uid, "posts"), {
+					  image: postImage,
+					  text: postText,
+					  uploadTime: serverTimestamp(),
+					  $userProfileData
+					})
+					await setDoc(doc(db, "users", $user?.uid, "posts", docRef?.id), {
+					  image: postImage,
+					  text: postText,
+					  postId: docRef?.id,
+					  uploadTime: serverTimestamp(),
+					},{ merge: true });
+	 			}catch(error){
+	 				isLoading = false;
+	 			}finally{
+	 				isLoading = false;
+	 				postText = "";
+	 				postImage = "";
+	 			}
+	 		}
+	 	}else{
+	 		isLoading = false
+	 		return;
+	 	}
+	 }
 </script>
+
 <dialog open={openImageDialogBox} class="border border-gray-600 bg-[#242526] text-gray-100 shadow-lg rounded-lg w-[20rem] md:w-[30rem] lg:w-[36rem] mx-auto px-4">
 	<div class="flex flex-col items-start space-y-2 w-full">
 		<div class="w-full flex flex-col space-y-2">		
@@ -9,29 +93,35 @@
 					<span>Upload Image:</span>
 					<small class="italic text-[0.7rem]">(Enter URL of the image)</small>
 			</label>
-			<input bind:value={imageUrl} id="name" class="focus:outline-none border border-gray-600 bg-transparent w-full py-1.5 px-3 rounded-lg " type="url" placeholder="Image URL">
+			<input bind:value={postImage} id="name" class="focus:outline-none border border-gray-600 bg-transparent w-full py-1.5 px-3 rounded-lg " type="url" placeholder="Image URL">
 		</div>	
 		<div class="flex items-center justify-center w-full">
-			{#if imageUrl}
-				<img class="w-full h-full object-cover" src={imageUrl} alt="Image Url">
+			{#if postImage}
+				<img class="w-full h-full object-cover" src={postImage} alt="Image Url">
 			{/if}
 		</div>
 		<div class="text-sm flex items-center justify-end w-full space-x-2 pt-3">
 			<button on:click={() => openImageDialogBox = !openImageDialogBox} class="py-1.5 px-3 rounded-md text-red-500">Cancel</button>
-			<button class="border border-gray-600 hover:border-[#1877F2] py-1.5 px-3 rounded-md hover:bg-[#1877F2] hover:text-gray-100">Upload</button>
+			<button on:click={() => openImageDialogBox = !openImageDialogBox} class="border border-gray-600 hover:border-[#1877F2] py-1.5 px-3 rounded-md hover:bg-[#1877F2] hover:text-gray-100">Upload</button>
 		</div>
 	</div>
 </dialog>
 <div class="px-4 py-3 pb-2 bg-[#242526] rounded-md mt-4 lg:mt-6 w-full container mx-auto max-w-lg">
 	<div class="flex flex-col space-y-1">
-
 		<div class="flex items-center space-x-2">
 			<div class="w-10 h-10">
-				<img class="w-full h-full object-cover rounded-full" src="https://scontent-maa2-1.xx.fbcdn.net/v/t1.6435-1/p160x160/140410108_522430372055176_3800608230781856331_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=7206a8&_nc_ohc=XyFyPKOtp5AAX9GSm3b&_nc_ht=scontent-maa2-1.xx&oh=be3c3cac0f69dbb82b730a1c0bb03396&oe=61BB6A90" alt="img">
+				<img class="w-full h-full object-cover rounded-full" src={postImage || $userProfileData?.photo} alt="img">
 			</div>
-			<input class="focus:outline-none w-full flex-1 py-2.5 px-4 rounded-full bg-[#3a3b3c]" type="text" placeholder="Whats on Your mind ?">
-			<button title="Upload Post" class="flex items-center bg-[#1877F2] w-10 h-10 grid place-items-center rounded-full">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M9.912 12H4L2.023 4.135A.662.662 0 0 1 2 3.995c-.022-.721.772-1.221 1.46-.891L22 12 3.46 20.896c-.68.327-1.464-.159-1.46-.867a.66.66 0 0 1 .033-.186L3.5 15"/></svg>
+			<input bind:value={postText} class="focus:outline-none w-full flex-1 py-2.5 px-4 rounded-full bg-[#3a3b3c]" type="text" placeholder="Whats on Your mind ?">
+			<button on:click={handlePostUpload} disabled={isLoading} title="Upload Post" class="flex items-center bg-[#1877F2] w-10 h-10 grid place-items-center rounded-full">
+				{#if isLoading}
+					<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+			          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+			          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+			        </svg>
+				{:else}
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M9.912 12H4L2.023 4.135A.662.662 0 0 1 2 3.995c-.022-.721.772-1.221 1.46-.891L22 12 3.46 20.896c-.68.327-1.464-.159-1.46-.867a.66.66 0 0 1 .033-.186L3.5 15"/></svg>
+				{/if}
 			</button>
 		</div>
 		<div class="py-3 pb-2">
