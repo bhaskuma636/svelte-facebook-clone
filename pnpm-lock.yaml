@@ -7,8 +7,11 @@ specifiers:
   autoprefixer: ^10.3.7
   cssnano: ^5.0.8
   firebase: ^9.4.1
+  from-now: ^1.0.2
   postcss: ^8.3.9
   postcss-load-config: ^3.1.0
+  ricknmortyquotes: ^1.0.2
+  sillyname: ^0.1.0
   svelte: ^3.42.6
   svelte-preprocess: ^4.9.8
   tailwindcss: ^2.2.16
@@ -20,8 +23,11 @@ devDependencies:
   autoprefixer: 10.4.0_postcss@8.3.11
   cssnano: 5.0.11_postcss@8.3.11
   firebase: 9.4.1
+  from-now: 1.0.2
   postcss: 8.3.11
   postcss-load-config: 3.1.0
+  ricknmortyquotes: 1.0.2
+  sillyname: 0.1.0
   svelte: 3.44.1
   svelte-preprocess: 4.9.8_12c78e77d52b6508fc8705d47f1a4eb4
   tailwindcss: 2.2.19_0c54bdadaf9d9c9c6c134cb2c6c061a3
@@ -1048,6 +1054,13 @@ packages:
       ms: 2.1.2
     dev: true
 
+  /deep-assign/1.0.0:
+    resolution: {integrity: sha1-sJJ0O+hCfcYh6gBnzex+cN0Z83s=}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      is-obj: 1.0.1
+    dev: true
+
   /defined/1.0.0:
     resolution: {integrity: sha1-yY2bzvdWdBiOEQlpFRGZ45sfppM=}
     dev: true
@@ -1367,6 +1380,13 @@ packages:
     resolution: {integrity: sha512-o2RiJQ6DZaR/5+Si0qJUIy637QMRudSi9kU/FFzx9EZazrIdnBgpU+3sEWCxAVhH2RtxW2Oz+T4p2o8uOPVcgA==}
     dev: true
 
+  /from-now/1.0.2:
+    resolution: {integrity: sha1-B/4Rl1TAYTAJ3JuTZdExpzJt9EY=}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      deep-assign: 1.0.0
+    dev: true
+
   /fs-extra/10.0.0:
     resolution: {integrity: sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==}
     engines: {node: '>=12'}
@@ -1562,6 +1582,11 @@ packages:
   /is-number/7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
+    dev: true
+
+  /is-obj/1.0.1:
+    resolution: {integrity: sha1-PkcprB9f3gJc19g6iW2rn09n2w8=}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /is-resolvable/1.1.0:
@@ -2197,6 +2222,10 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /random-number-in-range/1.0.2:
+    resolution: {integrity: sha1-84NjCA/4gxBLdX8nrnk23ii7/o4=}
+    dev: true
+
   /readable-stream/2.3.7:
     resolution: {integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==}
     dependencies:
@@ -2260,6 +2289,12 @@ packages:
 
   /rgba-regex/1.0.0:
     resolution: {integrity: sha1-QzdOLiyglosO8VI0YLfXMP8i7rM=}
+    dev: true
+
+  /ricknmortyquotes/1.0.2:
+    resolution: {integrity: sha512-e7XYqpRkVCj+M4Y5kJhybo5XIOgPvyh8tf2G9uuyo6vFtCNSxGJ4J+cEHVEWW5hv+ciE+KAueeZEaxJNJpBIjg==}
+    dependencies:
+      random-number-in-range: 1.0.2
     dev: true
 
   /rimraf/2.7.1:
@@ -2343,6 +2378,10 @@ packages:
   /set-immediate-shim/1.0.1:
     resolution: {integrity: sha1-SysbJ+uAip+NzEgaWOXlb1mfP2E=}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /sillyname/0.1.0:
+    resolution: {integrity: sha1-z9mIWOJJhnE0d3Xv47tRQfRsh9Y=}
     dev: true
 
   /simple-swizzle/0.2.2:
