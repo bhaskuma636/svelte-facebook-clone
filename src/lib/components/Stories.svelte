@@ -13,13 +13,13 @@
 		</li>
 		{#each Array(4) as _, index}	
 			<li class="shadow-md -z-1 w-[7.1rem] h-[12rem] flex flex-col items-center rounded-lg text-white bg-[#242526]">
-				<img class="-z-1 absolute w-[7.1rem] h-[12rem] object-cover rounded-lg" src="https://scontent.fhyd9-1.fna.fbcdn.net/v/t39.30808-6/s280x280/257967226_3457546794387881_244368857751675820_n.jpg?_nc_cat=1&ccb=1-5&_nc_sid=535e6e&_nc_ohc=0ZYhCKdbWkEAX-C7Fw9&_nc_ht=scontent.fhyd9-1.fna&oh=4cd867cb6b3eb41398853c6d0a196b27&oe=619A8488" alt="img">
+				<img class="-z-1 absolute w-[7.1rem] h-[12rem] object-cover rounded-lg" src="https://uploads.sitepoint.com/wp-content/uploads/2021/04/1618197067vitejs.png" alt="img">
 				<div class="-z-1 relative w-full h-full p-3 bg-gray-800/30 rounded-lg flex flex-col justify-between inset-0">
 					<div class="w-8 rounded-full -z-1">
-						<img class="-z-1 block rounded-full object-cover" src="https://scontent-maa2-1.xx.fbcdn.net/v/t1.6435-1/cp0/p40x40/94975531_833119273848577_8544913645291700224_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=7206a8&_nc_ohc=1ZCczPPwCFQAX8Ba827&_nc_ht=scontent-maa2-1.xx&oh=553cad4c9424133fe9781f8776360e54&oe=61BCB17B" alt="pic">
+						<img class="-z-1 block rounded-full object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1702px-Svelte_Logo.svg.png" alt="pic">
 					</div>
 					<p class="line-clamp-2 -z-1 font-medium text-xs">
-						5-Minute Crafts
+						SvelteKit💘
 					</p>
 				</div>
 			</li>
