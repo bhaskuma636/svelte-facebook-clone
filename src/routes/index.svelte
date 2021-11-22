@@ -14,7 +14,7 @@
 		</div>
 		<div class="w-full lg:w-2/3">
 			<Stories />
-			<div class="lg:mr-6">			
+			<div class="lg:mr-6 mb-10">			
 				<CreatePost />
 				<CreateRoom />
 				<PostContainer />
